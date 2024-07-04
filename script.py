@@ -1,18 +1,20 @@
-import requests
+
 import csv
 from google.cloud import storage
+import requests
 
-url = 'https://cricbuzz-cricket.p.rapidapi.com/stats/v1/rankings/batsmen'
+url = "https://cricbuzz-cricket.p.rapidapi.com/stats/v1/rankings/batsmen"
+
+querystring = {"formatType":"test"}
+
 headers = {
-        "X-RapidAPI-Key": "Replace with your RapidAPI key"  # Replace with your RapidAPI key
-    'X-RapidAPI-Host': 'cricbuzz-cricket.p.rapidapi.com'
-}
-params = {
-    'formatType': 'odi'
+	"x-rapidapi-key": "5799ca01e1msh4d26ab6f4b938dbp1c23fbjsndb87aa92ebd1",
+	"x-rapidapi-host": "cricbuzz-cricket.p.rapidapi.com"
 }
 
-response = requests.get(url, headers=headers, params=params)
+response = requests.get(url, headers=headers, params=querystring)
 
+# print(response.json())
 if response.status_code == 200:
     data = response.json().get('rank', [])  # Extracting the 'rank' data
     csv_filename = 'batsmen_rankings.csv'
@@ -30,7 +32,7 @@ if response.status_code == 200:
         print(f"Data fetched successfully and written to '{csv_filename}'")
 
         # Upload the CSV file to GCS
-        bucket_name = 'bkt-ranking-data'
+        bucket_name = 'bucket-ranking-data-1'
         storage_client = storage.Client()
         bucket = storage_client.bucket(bucket_name)
         destination_blob_name = f'{csv_filename}'  # The path to store in GCS

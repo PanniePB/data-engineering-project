@@ -1,16 +1,16 @@
 import requests
 import csv
 
-url = 'https://cricbuzz-cricket.p.rapidapi.com/stats/v1/rankings/batsmen'
+url = "https://cricbuzz-cricket.p.rapidapi.com/stats/v1/rankings/batsmen"
+
+querystring = {"formatType":"test"}
+
 headers = {
-     "X-RapidAPI-Key": "Replace with your RapidAPI key"  # Replace with your RapidAPI key
-    'X-RapidAPI-Host': 'cricbuzz-cricket.p.rapidapi.com'
-}
-params = {
-    'formatType': 'odi'
+	"x-rapidapi-key": "5799ca01e1msh4d26ab6f4b938dbp1c23fbjsndb87aa92ebd1",
+	"x-rapidapi-host": "cricbuzz-cricket.p.rapidapi.com"
 }
 
-response = requests.get(url, headers=headers, params=params)
+response = requests.get(url, headers=headers, params=querystring)
 
 if response.status_code == 200:
     data = response.json().get('rank', [])  # Extracting the 'rank' data
