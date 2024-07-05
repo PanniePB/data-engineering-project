@@ -2,6 +2,9 @@
 import csv
 from google.cloud import storage
 import requests
+import os
+
+os.environ["GOOGLE_APPLICATION_CREDENTIALS"] = "C:\\Users\\priya\\Dropbox\\My PC (LAPTOP-CMBSER56)\\Downloads\\concrete-plasma-428403-g9-3d39dd0e62f6.json"
 
 url = "https://cricbuzz-cricket.p.rapidapi.com/stats/v1/rankings/batsmen"
 
