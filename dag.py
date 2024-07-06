@@ -1,6 +1,6 @@
 from datetime import datetime, timedelta
 from airflow import DAG
-from airflow.operators.bash_operator import BashOperator
+from airflow.operators.bash import BashOperator
 from airflow.utils.dates import days_ago
 
 default_args = {
@@ -23,5 +23,5 @@ dag = DAG('fetch_cricket_stats',
 with dag:
     run_script_task = BashOperator(
         task_id='run_script',
-        bash_command='python /home/airflow/gcs/dags/scripts/extract_and_push_gcs.py',
+        bash_command='python /home/airflow/gcs/dags/scripts/script.py',
     )
