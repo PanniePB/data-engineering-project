@@ -15,7 +15,6 @@ Once the data is obtained,  next step involves preserving it securely in the clo
 ### Creating a Cloud Function Trigger
 With  data safely stored, we proceed to set up a Cloud Function that acts as the catalyst for  pipeline. This function triggers upon file upload to the GCS bucket, serving as the initiator for  subsequent data processing steps.
 
-## Future goals
 
 ### Execution of the Cloud Function 06-07-2024
 Within the Cloud Function, intricate code is crafted to precisely trigger a Dataflow job. We’ll meticulously handle triggers and pass the requisite parameters to seamlessly initiate the Dataflow job, ensuring a smooth flow of data processing.
@@ -26,3 +25,6 @@ The core of  pipeline lies in the Dataflow job. Triggered by the Cloud Function,
 ### Looker Dashboard Creation 06-07-2024
 Created a visually compelling dashboard. This dashboard will serve as the visualization hub, enabling insightful analysis based on the data loaded from  cricket statistics pipeline.
 ![Looker](https://github.com/PanniePB/data-engineering-project/blob/main/Looker.png)
+
+## Future Goals 
+Explore more services provided by GOOGLE Cloud Platform primarily FinOps framework.
