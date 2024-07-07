@@ -3,7 +3,7 @@
 
 ### Architecture
 
-![Architecture][https://github.com/PanniePB/data-engineering-project/blob/main/Architecture.png]
+![Architecture](https://github.com/PanniePB/data-engineering-project/blob/main/Architecture.png)
 
 
 ### Data Retrieval with Python and Cricbuzz API
@@ -25,3 +25,4 @@ The core of  pipeline lies in the Dataflow job. Triggered by the Cloud Function,
 
 ### Looker Dashboard Creation 06-07-2024
 Created a visually compelling dashboard. This dashboard will serve as the visualization hub, enabling insightful analysis based on the data loaded from  cricket statistics pipeline.
+![Looker](https://github.com/PanniePB/data-engineering-project/blob/main/Looker.png)
